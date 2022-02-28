@@ -1,0 +1,207 @@
+################################################################################
+############################ MetaDL CHALLENGE  #################################
+################################################################################
+# Authors: Adrian El Baz, Isabelle Guyon, Zhengying Liu
+# Date: Jun 19, 2021
+
+# ALL INFORMATION, SOFTWARE, DOCUMENTATION, AND DATA ARE PROVIDED "AS-IS".
+# UNIVERSITE PARIS SUD, INRIA, CHALEARN, AND/OR OTHER ORGANIZERS OR CODE AUTHORS DISCLAIM
+# ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR ANY PARTICULAR PURPOSE, AND THE
+# WARRANTY OF NON-INFRIGEMENT OF ANY THIRD PARTY'S INTELLECTUAL PROPERTY RIGHTS.
+# IN NO EVENT SHALL UNIVERSITE PARIS SUD, INRIA, CHALEARN, AND/OR OTHER ORGANIZERS
+# BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+# ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF SOFTWARE, DOCUMENTS,
+# MATERIALS, PUBLICATIONS, OR INFORMATION MADE AVAILABLE FOR THE CHALLENGE.
+
+title: 'MetaDL :: NeurIPS 2021'
+description: Meta-learning with Deep Learning.
+image: logo.png
+has_registration: False                 # We do not check participants, registration is free
+force_submission_to_leaderboard: True   # If false, participants must submit manually
+disallow_leaderboard_modifying: True    # If true, submissions cannot be changed
+enable_detailed_results: True           # True if html file written
+competition_docker_image: ebadrian/metadl:gpu-latest # replace that by your own docker
+end_date: 2021-09-02
+admin_names: guyon, Zhengying, ebadrian, Pavao
+html:
+    overview: overview.html
+    evaluation: evaluation.html
+    terms: terms.html
+    data: data.html
+    credits: credits.html
+
+# Phases
+phases:
+# ----------------------            AUTODL              ------------------------
+
+# ----------------------          ALL DATASETS PHASE      ------------------------
+  1:
+    phasenumber: 1
+    label: "All meta-datasets"
+    description: "Please make submissions by clicking on following 'Submit' button. Then you can view the submission results of your algorithm on each meta-dataset in corresponding tab (Meta-dataset 1, Meta-dataset 2, etc)."
+    color: orange # Tab colors (white, orange, yellow, green, blue, purple)
+    start_date: 2021-08-02
+    max_submissions: 100
+    max_submissions_per_day: 5
+    auto_migration: False
+    is_parallel_parent: True
+    is_scoring_only: True
+    scoring_program: metadl_parent_scoring_program.zip
+    hidden_columns: "score, Duration"
+
+  2:
+    phasenumber: 2
+    label: "Meta-dataset 1"
+    description: "This tab contains submission results of your algorithm on Meta-dataset 1."
+    color: green                # Tab colors (white, orange, yellow, green, blue, purple)
+    start_date: 2021-08-02
+    parent_phasenumber: 1
+    is_scoring_only: False       # if false -> code submission BUT this is an exception
+    execution_time_limit: 7200  # (in sec) must be given when code submission enabled
+    max_submissions: 100        # no max
+    max_submissions_per_day: 5  # Maximum number of submissions per day, to avoid congestion
+    auto_migration: False        # first submission = last one of previous phase
+    ingestion_program_only_during_scoring: True # option for parallel ingestion and scoring
+    input_data: 1ce575b5-c762-4483-9e37-b9f173caa10b #f925bf5b-d6a9-46a8-a077-a84861e57984
+    ingestion_program: metadl_ingestion_program.zip
+    scoring_program: metadl_scoring_program.zip
+    reference_data: 4916cc3f-c099-4e16-83af-15b041e9debd #23e7c434-b87d-4fae-8850-4a3d366c7797
+    hidden_columns: "set1_score, set2_score, set3_score, set4_score, set5_score, ave_score"
+
+
+  3:
+    phasenumber: 3              # NO submission, auto-migration
+    label: "Meta-dataset 2"
+    description: "This tab contains submission results of your algorithm on Meta-dataset 2."
+    color: green               # Tab colors (white, orange, yellow, green, blue, purple)
+    start_date: 2021-08-02
+    parent_phasenumber: 1
+    is_scoring_only: False       # if false -> code submission BUT this is an exception
+    execution_time_limit: 7200  # (in sec) must be given when code submission enabled
+    max_submissions: 100        # no max
+    max_submissions_per_day: 5  # Maximum number of submissions per day, to avoid congestion
+    auto_migration: False        # first submission = last one of previous phase
+    ingestion_program_only_during_scoring: True # option for parallel ingestion and scoring
+    input_data: 1ce575b5-c762-4483-9e37-b9f173caa10b # 37a6461e-7c1f-468a-bc4a-fa66c6847d95
+    ingestion_program: metadl_ingestion_program.zip
+    scoring_program: metadl_scoring_program.zip
+    reference_data: 4916cc3f-c099-4e16-83af-15b041e9debd # 8b92f40f-f193-4026-9ef8-a06d8bc82934
+    hidden_columns: "set1_score, set2_score, set3_score, set4_score, set5_score, ave_score"
+
+
+  4:
+    phasenumber: 4              # NO submission, auto-migration
+    label: "Meta-dataset 3"
+    description: "This tab contains submission results of your algorithm on Meta-dataset 3."
+    color: green               # Tab colors (white, orange, yellow, green, blue, purple)
+    start_date: 2021-08-02
+    parent_phasenumber: 1
+    is_scoring_only: False       # if false -> code submission BUT this is an exception
+    execution_time_limit: 7200  # (in sec) must be given when code submission enabled
+    max_submissions: 100        # no max
+    max_submissions_per_day: 5  # Maximum number of submissions per day, to avoid congestion
+    auto_migration: False        # first submission = last one of previous phase
+    ingestion_program_only_during_scoring: True # option for parallel ingestion and scoring
+    input_data: 1ce575b5-c762-4483-9e37-b9f173caa10b # b1ad71fe-b597-4f8d-8b56-afff66002c62
+    ingestion_program: metadl_ingestion_program.zip
+    scoring_program: metadl_scoring_program.zip
+    reference_data: 4916cc3f-c099-4e16-83af-15b041e9debd # 8436224e-e958-457e-bd8d-7c18ac43a6c0
+    hidden_columns: "set1_score, set2_score, set3_score, set4_score, set5_score, ave_score"
+
+
+  5:
+    phasenumber: 5              # NO submission, auto-migration
+    label: "Meta-dataset 4"
+    description: "This tab contains submission results of your algorithm on Meta-dataset 4."
+    color: green               # Tab colors (white, orange, yellow, green, blue, purple)
+    start_date: 2021-08-02
+    parent_phasenumber: 1
+    is_scoring_only: False       # if false -> code submission BUT this is an exception
+    execution_time_limit: 7200  # (in sec) must be given when code submission enabled
+    max_submissions: 100        # no max
+    max_submissions_per_day: 5  # Maximum number of submissions per day, to avoid congestion
+    auto_migration: False        # first submission = last one of previous phase
+    ingestion_program_only_during_scoring: True # option for parallel ingestion and scoring
+    input_data: 1ce575b5-c762-4483-9e37-b9f173caa10b # 8f0c139f-c6c8-4433-bf38-51e7d0486bea
+    ingestion_program: metadl_ingestion_program.zip
+    scoring_program: metadl_scoring_program.zip
+    reference_data: 4916cc3f-c099-4e16-83af-15b041e9debd # 8528974d-b0f2-45bd-bd9c-2c859acb8ebc
+    hidden_columns: "set1_score, set2_score, set3_score, set4_score, set5_score, ave_score"
+
+
+  6:
+    phasenumber: 6              # NO submission, auto-migration
+    label: "Meta-dataset 5"
+    description: "This tab contains submission results of your algorithm on Meta-dataset 5."
+    color: green               # Tab colors (white, orange, yellow, green, blue, purple)
+    start_date: 2021-08-02
+    parent_phasenumber: 1
+    is_scoring_only: False       # if false -> code submission BUT this is an exception
+    execution_time_limit: 7200  # (in sec) must be given when code submission enabled
+    max_submissions: 100        # no max
+    max_submissions_per_day: 5  # Maximum number of submissions per day, to avoid congestion
+    auto_migration: False        # first submission = last one of previous phase
+    ingestion_program_only_during_scoring: True # option for parallel ingestion and scoring
+    input_data:  1ce575b5-c762-4483-9e37-b9f173caa10b # ce683464-561e-472f-886d-4d04039f6c39
+    ingestion_program: metadl_ingestion_program.zip
+    scoring_program: metadl_scoring_program.zip
+    reference_data:  4916cc3f-c099-4e16-83af-15b041e9debd # 65acfcae-9b8f-4cb5-ad8c-1032ad038856
+    hidden_columns: "set1_score, set2_score, set3_score, set4_score, set5_score, ave_score"
+
+# ------------------------------------------------------------------------------
+# ----------------------              LEADERBOARD                ---------------
+# ------------------------------------------------------------------------------
+leaderboard:
+  leaderboards:
+      Results: &RESULTS
+          label: RESULTS
+          rank: 1
+
+  columns:
+      score:
+          leaderboard: *RESULTS
+          label: Score
+          numeric_format: 4
+          rank: 2
+      set1_score:
+          leaderboard: *RESULTS
+          label: Meta-dataset 1
+          numeric_format: 4
+          rank: 2
+      set2_score:
+          leaderboard: *RESULTS
+          label: Meta-dataset 2
+          numeric_format: 4
+          rank: 3
+      set3_score:
+          leaderboard: *RESULTS
+          label: Meta-dataset 3
+          numeric_format: 4
+          rank: 4
+      set4_score:
+          leaderboard: *RESULTS
+          label: Meta-dataset 4
+          numeric_format: 4
+          rank: 5
+      set5_score:
+          leaderboard: *RESULTS
+          label: Meta-dataset 5
+          numeric_format: 4
+          rank: 6
+      ave_score:
+          leaderboard: *RESULTS
+          label: <Rank>
+          numeric_format: 4
+          rank: 1
+          selection_default: 1
+          sort: asc
+          computed:
+              operation: Avg
+              fields: set1_score, set2_score, set3_score, set4_score, set5_score
+      Duration:
+          leaderboard: *RESULTS
+          label: Duration
+          numeric_format: 2
+          rank: 7
+  

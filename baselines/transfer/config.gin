@@ -1,0 +1,5 @@
+DataGenerator.batch_config = [71, 10] # [image_size, batch_size]
+DataGenerator.episode_config = [71, 5, 1, 19]
+DataGenerator.valid_episode_config = [71, 5, 1, 19]
+DataGenerator.pool = 'train'
+DataGenerator.mode = 'batch'

@@ -1,0 +1,7 @@
+python -m AutoFolioPipeline --train
+python -m AutoFolioPipeline --train --tune --wallclock_limit 600 --runcount_limit 42
+python -m AutoFolioPipeline --train --autofolio_model_path "starting_kit/submission/af_models/"
+python -m AutoFolioPipeline --train --tune --wallclock_limit 600 --runcount_limit 42 --autofolio_model_path "starting_kit/submission/af_models"
+python -m AutoFolioPipeline --train --feat_path experiments/task2vec/metafeatures.csv --exp_suffix task2vec_default
+python -m AutoFolioPipeline --train --feat_path experiments/task2vec/metafeatures.csv --exp_suffix task2vec_tuned --tune --wallclock_limit 600 --runcount_limit 42
+python -m AutoFolioPipeline --train --feat_path experiments/task2vec/metafeatures.csv --exp_suffix task2vec_default --autofolio_model_path "starting_kit/submission/af_models/"
